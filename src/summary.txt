@@ -1,0 +1,70 @@
+src/
+│
+├── app/
+│   ├── store.ts
+│   ├── rootReducer.ts
+│   └── hooks.ts              # typed useDispatch & useSelector
+│
+├── router/
+│   └── AppRouter.tsx
+│
+├── services/
+│   ├── axiosInstance.ts
+│   ├── product.api.ts
+│   ├── cart.api.ts
+│   └── ai.api.ts
+│
+├── features/
+│   ├── product/
+│   │   ├── productSlice.ts
+│   │   ├── productSelectors.ts
+│   │   └── product.types.ts
+│   │
+│   ├── cart/
+│   │   ├── cartSlice.ts
+│   │   ├── cartSelectors.ts
+│   │   └── cart.types.ts
+│   │
+│   └── chatbot/
+│       ├── chatbotSlice.ts
+│       ├── chatbotSelectors.ts
+│       ├── chatbot.types.ts
+│       └── chatbotThunks.ts
+│
+├── components/
+│   ├── atoms/
+│   │   ├── Button/
+│   │   ├── Input/
+│   │   ├── Avatar/
+│   │   └── Spinner/
+│   │
+│   ├── molecules/
+│   │   ├── ChatMessage/
+│   │   ├── ChatInput/
+│   │   └── ProductPrice/
+│   │
+│   ├── organisms/
+│   │   ├── Navbar/
+│   │   ├── ProductGrid/
+│   │   ├── CartDrawer/
+│   │   └── ChatWidget/
+│   │
+│   ├── templates/
+│   │   ├── MainLayout/
+│   │   └── AuthLayout/
+│   │
+│   └── pages/
+│       ├── HomePage.tsx
+│       ├── ProductDetailPage.tsx
+│       ├── CartPage.tsx
+│       └── ChatPage.tsx
+│
+├── hooks/
+│   └── useChatbot.ts
+│
+├── utils/
+│   └── helpers.ts
+│
+└── main.tsx
+
+implementasi chatbot pada aplikasi jualbeli parfume signature
