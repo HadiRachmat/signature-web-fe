@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PublicRoutes from './PublicRoutes';
+import ProtectedRoute from './ProtectedRoute';
 
 const AppRoutes = () => {
   return (
@@ -8,8 +9,8 @@ const AppRoutes = () => {
         <Route path="/" element={<Navigate to="/home" />} />
 
         <Route path="/home/*" element={<PublicRoutes />} />
-        {/* <Route path="/cms/*" element={<CmsRoutes />} />
-        <Route path="*" element={<PageNotFound />} /> */}
+        <Route path="/protected/*" element={<ProtectedRoute />} />
+        {/* <Route path="*" element={<PageNotFound />} /> */}
       </Routes>
     </Router>
   );
