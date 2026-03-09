@@ -1,13 +1,19 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-import PublicPageExample from '../components/public/index';
+import PublicLayout from '../components/templates/public/index';
+import LoginPage from '../components/pages/public/auth/login';
+import RegisterPage from '../components/pages/public/auth/register';
+import HomePage from '../components/pages/public/home';
 
 const PublicRoutes = () => {
   return (
     <>
       <Routes>
-        <Route element={<PublicPageExample />}>
-          <Route path="/" element={<PublicPageExample />} />
+        <Route path="/" element={<PublicLayout />}>
+          <Route index element={<Navigate to="hero" replace />} />
+          <Route path="/hero" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Route>
       </Routes>
     </>
