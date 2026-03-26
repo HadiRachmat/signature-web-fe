@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import LoginImage from '../../../../../assets/image-28.png';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +24,7 @@ const LoginPage = () => {
     <div className="flex items-center justify-center min-h-screen px-4">
       <div className="relative w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 ">
         {/* Left / Illustration */}
-        <div className="hidden md:flex text-center items-center bg-amber-600 overflow-hidden shadow-lg rounded-l-3xl">
+        <div className="hidden md:flex text-center items-center bg-[#41431B] overflow-hidden shadow-lg rounded-l-3xl">
           <div className=" p-8 rounded-md text-white">
             <h1 className="text-6xl font-semibold">Hi, Welcome</h1>
             <p className="mt-2 text-sm">Please log in using your registered account.</p>
@@ -93,7 +95,11 @@ const LoginPage = () => {
 
             <div className="pt-4 text-center text-sm text-gray-500">
               Don’t have an account?{' '}
-              <a className="text-blue-600 hover:underline" href="#">
+              <a
+                className="text-blue-600 hover:underline"
+                href="#"
+                onClick={() => navigate('/home/register')}
+              >
                 Sign up
               </a>
             </div>

@@ -2,19 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip, Drawer } from 'antd';
 import {
-  HomeOutlined,
-  UserOutlined,
-  ContactsOutlined,
-  ProductOutlined,
-  GroupOutlined,
-  SettingOutlined,
-  LogoutOutlined,
-  BarcodeOutlined,
-  RocketOutlined,
-  TruckOutlined,
-  CommentOutlined,
-  ShoppingCartOutlined,
-} from '@ant-design/icons';
+  IoHomeOutline,
+  IoPersonOutline,
+  IoCallOutline,
+  IoLibraryOutline,
+  IoBarcodeOutline,
+  IoHeartCircleOutline,
+  IoList,
+  IoBarChartOutline,
+  IoCalendarOutline,
+  IoAnalyticsOutline,
+  IoSettingsOutline,
+  IoLogOutOutline,
+} from 'react-icons/io5';
 
 // Import role constants
 import * as CONSTANS from '../../../../configuration/constants';
@@ -40,70 +40,70 @@ const SidebarLayout = ({
   const menuItems = [
     {
       key: '1',
-      icon: <HomeOutlined />,
+      icon: <IoHomeOutline />,
       label: 'Dashboard',
       path: '/protected/dashboard',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '2',
-      icon: <UserOutlined />,
+      icon: <IoPersonOutline />,
       label: 'Users',
       path: '/protected/users',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '3',
-      icon: <ContactsOutlined />,
+      icon: <IoCallOutline />,
       label: 'Contact',
       path: '/protected/contact',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '4',
-      icon: <GroupOutlined />,
+      icon: <IoList />,
       label: 'Riwayat hafalan',
       path: '/protected/memorize-record',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '5',
-      icon: <ProductOutlined />,
+      icon: <IoBarcodeOutline />,
       label: 'Riwayat Murajaah',
       path: '/protected/memorize-murajaah',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '6',
-      icon: <BarcodeOutlined />,
+      icon: <IoBarChartOutline />,
       label: 'hafalan sehari hari',
       path: '/protected/daily-records',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '7',
-      icon: <RocketOutlined />,
+      icon: <IoLibraryOutline />,
       label: 'Qur`an Digital',
       path: '/protected/quran-digital',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '8',
-      icon: <TruckOutlined />,
+      icon: <IoHeartCircleOutline />,
       label: 'Kumpulan Dzikir',
       path: '/protected/dzikir-collection',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '9',
-      icon: <ShoppingCartOutlined />,
+      icon: <IoCalendarOutline />,
       label: 'Kalender Islam',
       path: '/protected/islam-calendar',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: '10',
-      icon: <CommentOutlined />,
+      icon: <IoAnalyticsOutline />,
       label: 'Leaderboard',
       path: '/protected/leader-board',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
@@ -113,14 +113,14 @@ const SidebarLayout = ({
   const bottomItems = [
     {
       key: 'settings',
-      icon: <SettingOutlined />,
+      icon: <IoSettingsOutline />,
       label: 'Settings',
       path: '/protected/settings-page',
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
     },
     {
       key: 'logout',
-      icon: <LogoutOutlined />,
+      icon: <IoLogOutOutline />,
       label: 'Logout',
       path: null,
       roles: [CONSTANS.BASE_ROLE_ADMIN, CONSTANS.BASE_ROLE_STUDENT, CONSTANS.BASE_ROLE_TEACHER],
@@ -168,9 +168,11 @@ const SidebarLayout = ({
         {/* Logo Section */}
         <div className="flex items-center justify-center gap-3 pt-6 pb-4">
           <div className="w-10 h-10 bg-[#3b3b3b] rounded-[10px] flex items-center justify-center text-lg font-bold">
-            JS
+            AL
           </div>
-          {isExpanded && <span className="text-lg font-semibold tracking-wide">Signature</span>}
+          {isExpanded && (
+            <span className="text-lg font-semibold tracking-wide">Al-Hafidz Apps</span>
+          )}
         </div>
 
         {/* Menu Section */}
@@ -231,7 +233,7 @@ const SidebarLayout = ({
           hidden sm:flex fixed top-0 left-0  h-screen flex-col justify-between
           transition-all duration-300 ease-in-out shadow-xl
             ${isExpanded ? 'w-64' : 'w-20'}
-            bg-[#002243] text-white my-auto rounded-r-2xl
+            bg-[#41431B] text-white my-auto rounded-r-2xl
         `}
       >
         {menuContent}
